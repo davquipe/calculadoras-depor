@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'mixins';
+
+@media screen and (max-width: 768px) {
+    .banner-heading {
+        height: $bannerHeadingTablet768Height;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .table-sm>:not(caption)>*>* {
+        padding: 0.25rem;
+    }
+
+    .banner-heading {
+        height: 305px;
+    }
+
+    .standing-head {
+        @include fontStyle(0.75rem, 0.75rem, $preloExtraBold);
+    }
+
+    .epigraph,
+    .standing-data,
+    .match-form,
+    .input-score {
+        @include fontStyle(0.75rem, 0.75rem, $preloMedium);
+    }
+
+    .btn-matchday {
+        width: $matchDayMobileWidth;
+        height: $matchDayMobileHeight;
+    }
+
+    .btn-bet {
+        font: 700 14px/19px $preloMedium;
+    }
+
+    .btn-matchday,
+    .btn-form,
+    .btn-reset {
+        @include fontStyle(14px, 19px, $preloMedium);
+    }
+
+    .input-score {
+        width: $matchDayMobileWidth;
+        height: $matchDayMobileHeight;
+    }
+
+    .carousel-control-prev {
+        left: $positionLeftMobileButtonControlSlider;
+    }
+
+    .carousel-control-next {
+        right: $positionRightMobileButtonControlSlider;
+    }
+
+    .heading-table {
+        @include fontStyle(1.875rem, 3.75rem, $preloMedium);
+    }
+
+    .legend,
+    .error {
+        @include fontStyle($legendMobileFontSize, $legendMobileFontSpacing, $preloMedium);
+    }
+
+    .btn-show-apertura {
+        @include fontStyle($btnAperturaMobileFontSize, $btnAperturaMobileFontSpacing, $preloBold);
+    }
+
+    .bg-footer {
+        height: 120px;
+    }
+
+    .match-day-form {
+        height: 35px;
+    }
+
+    .match-hour {
+        width: 115px;
+        height: 20px;
+        @include fontStyle(0.75rem, 0.75rem, $preloMedium);
+
+        &>p {
+            position: relative;
+            top: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .banner-heading {
+        height: $bannerHeadingTablet540Height;
+    }
+}
+
+@media screen and (max-width: 539px) {
+    .carousel-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner-heading {
+        height: $bannerHeadingMobileHeight;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .standing-head {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloExtraBold);
+    }
+
+    .match-form,
+    .input-score,
+    .standing-data {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloMedium);
+    }
+}
+
+@media screen and (max-width: 393px) {
+    .banner-heading {
+        height: $bannerHeadingXsMobileHeight;
+    }
+
+    .input-score {
+        width: $matchDayXsMobileWidth;
+        height: $matchDayXsMobileHeight;
+    }
+
+    .legend,
+    .error {
+        @include fontStyle($legendXsMobileFontSize, $legendXsMobileFontSpacing, $preloMedium);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .banner-heading {
+        height: $bannerHeadingXs375MobileHeight;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .banner-heading {
+        height: $bannerHeadingXs360MobileHeight;
+    }
+}

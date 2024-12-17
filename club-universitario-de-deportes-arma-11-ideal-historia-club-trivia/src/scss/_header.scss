@@ -1,0 +1,33 @@
+@import 'variables.scss';
+
+header {
+    height: $headerHeight;
+    z-index: 99;
+    background-color: $backgroundColorHeader;
+
+    .ctn-header {
+        max-width: 990px;
+        padding: 0 .5rem 0;
+
+        .ctn-logo {
+            .logo {
+                width: $widthLogo;
+            }
+
+            .header-barra-2 {
+                height: 20px;
+                width: 1px;
+            }
+
+            .boton-especiales {
+                text-decoration: none;
+                font: $bold .938rem/1.125rem $font-barlow;
+                vertical-align: -1px;
+            }
+
+            .cruz {
+                color: $colorCruz;
+            }
+        }
+    }
+}

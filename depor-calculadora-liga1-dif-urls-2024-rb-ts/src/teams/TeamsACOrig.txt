@@ -1,0 +1,756 @@
+//types
+import { TeamData, Team } from "../types/types";
+
+export const teamsAC: Team = {
+    "STE": {
+        id: "STE",
+        name: "Carlos Stein",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }   
+    },
+    "AYA": {
+        id: "AYA",
+        name: "Ayacucho",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }   
+    },
+    "USM": {
+        id: "USM",
+        name: "San Martín",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }   
+    },
+    "UCV": {
+        id: "UCV",
+        name: "Vallejo",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }   
+    },
+    "UTC": {
+            id: "UTC",
+            name: "UTC",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "UNI": {
+            id: "UNI",
+            name: "Universitario",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    
+    "UCO": {
+            id: "UCO",
+            name: "Unión Comercio",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "CRI": {
+            id: "CRI",
+            name: "Sporting Cristal",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "SHU": {
+            id: "SHU",
+            name: "Sport Huancayo",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },    
+    "SBO": {
+            id: "SBO",
+            name: "Sport Boys",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "MUN": {
+            id: "MUN",
+            name: "Municipal",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    
+    "MEL": {
+            id: "MEL",
+            name: "Melgar",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },    
+    "MAN": {
+            id: "MAN",
+            name: "Mannucci",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },    
+    "GAR": {
+            id: "GAR",
+            name: "Garcilaso",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "CUS": {
+            id: "CUS",
+            name: "Cusco FC",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },      
+    "CIE": {
+            id: "CIE",
+            name: "Cienciano",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "CAN": {
+            id: "CAN",
+            name: "Cantolao",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }          
+        },
+    "BIN": {
+            id: "BIN",
+            name: "Binacional",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+        "GRA": {
+            id: "GRA",
+            name: "Atlético Grau",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },
+    "ALI": {
+            id: "ALI",
+            name: "Alianza Lima",
+            apertura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            clausura: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },    
+            accumulated: {
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }   
+        },     
+    "AAS": {
+        id: "AAS",
+        name: "Alianza Atlético",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }  
+    },
+    "ADT": {
+        id: "ADT",
+        name: "ADT",
+        apertura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },
+        clausura: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        },    
+        accumulated: {
+            points: 0,
+            playedMatches: 0,
+            wonMatches: 0,
+            drawnMatches: 0,
+            lostMatches: 0, 
+            goalsFor: 0,
+            goalsAgainst: 0,
+            goalsDifference: 0
+        }   
+    }
+};
+

@@ -1,0 +1,101 @@
+$urlAssets: 'https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_general/depor/prod/';
+$slugCommonAssets: 'elementos-comunes/';
+$urlCommonAssets: $urlAssets + $slugCommonAssets;
+
+//fonts
+$icomoon: 'icomoon';
+$pathFonts: $urlCommonAssets + 'fonts/';
+
+$preloBold: 'Prelo-Bold';
+$preloMedium: 'Prelo-Medium';
+$preloExtraBold: 'Prelo-ExtraBold';
+
+//body
+$whiteColor: #FFF;
+$blackColor: #000;
+$lightGreen: #EF000D; //#f8670b betsson;
+$backgroundColorBody: $whiteColor;
+
+//header Depor
+$backgroundColorHeader: $blackColor;
+$colorCruz: #FFF;
+$widthLogo: 70px;
+$heightLogo: 26px;
+$backgroundSize: 80%;
+$headerHeight: 46px;
+
+//especial
+$layoutMaxWidth: 960px;
+$bgMatchDaysColor: $lightGreen;
+$activeBgMatchDaysColor: $blackColor;
+$standingColor: $blackColor;
+$bgFirstPosition: #CFD607; //#fcc772;betsson
+$bgSecondPosition: #E4E68E;
+$bgThirdPosition: #D7D8A9;
+$bgFourthPosition: #F0F0CE;
+$bgMiddlePosition: #F5F5F5;
+$bgBeforeLastPosition: #DBDBDB;
+$bgLastPosition: #ACACAC;
+$bannerHeadingHeight: 234px;
+$bgLegends: (
+    1: $bgFirstPosition,
+    2: $bgSecondPosition,
+    3: $bgThirdPosition,
+    4: $bgFourthPosition,
+    5: $bgLastPosition
+);
+$matchDays: 17; //cambiar por nro de fechas
+$amountOfLegends: 5; //1 para Apertura, 5 para el Clausura. Ver src/Constants.ts
+$positionLeftButtonControlSlider: -35px;
+$positionRightButtonControlSlider: -30px;
+$bgOddMatch: #E0E0E0;
+$scoreSeparatorWidth: 4px;
+$matchDayWidth: 45px;
+$matchDayHeight: 33px;
+$matchDayFontSize: 18px;
+$matchDayFontSpacing: 24px;
+$bgInputScore: $blackColor;
+$inputScoreColor: $whiteColor;
+$inputReadOnlyScoreColor: #807D7D;
+$bgReadOnlyInputScoreColor: #e9ecef;
+$bgFormButtonColor: $activeBgMatchDaysColor;
+$headingTableFontSize: 40px;
+$headingTableFontSpacing: 88px;
+$btnAperturaFontSize: 17px;
+$btnAperturaFontSpacing: 17px;
+$legendFontSize: 14px;
+$legendFontSpacing: 24px;
+$btnBgColor: #fcc772;
+$bgFooter: #D8EDFB;
+
+//tablet
+$bannerHeadingTabletHeight: 300px;
+$bannerHeadingTablet768Height: 188px;
+$bannerHeadingTablet640Height: 153px;
+$bannerHeadingTablet540Height: 132px;
+
+//mobile
+$bannerHeadingMobileHeight: 275px;
+$positionLeftMobileButtonControlSlider: -30px;
+$positionRightMobileButtonControlSlider: -25px;
+$matchDayMobileWidth: 32px;
+$matchDayMobileHeight: 24px;
+$matchDayMobileFontSize: 14px;
+$matchDayMobileFontSpacing: 20px;
+$matchDayXsMobileWidth: 26px;
+$matchDayXsMobileHeight: 22px;
+$matchDayXsMobileFontSize: 12px;
+$matchDayXsMobileFontSpacing: 12px;
+$headingTableMobileFontSize: 30px;
+$headingTableMobileFontSpacing: 60px;
+$btnAperturaMobileFontSize: 14px;
+$btnAperturaMobileFontSpacing: 14px;
+$legendMobileFontSize: 12px;
+$legendMobileFontSpacing: 20px;
+$legendXsMobileFontSize: 10px;
+$legendXsMobileFontSpacing: 14px;
+
+//mobile xs
+$bannerHeadingXsMobileHeight: 258px;
+$bannerHeadingXs375MobileHeight: 248px;
+$bannerHeadingXs360MobileHeight: 238px;

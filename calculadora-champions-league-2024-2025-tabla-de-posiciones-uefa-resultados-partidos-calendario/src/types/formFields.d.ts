@@ -1,0 +1,16 @@
+interface FormFields {
+    match1HomeGoals: number,
+    match1AwayGoals: number,
+    match2HomeGoals: number,
+    match2AwayGoals: number,
+    match3HomeGoals: number,
+	match3AwayGoals: number,
+    match4HomeGoals: number,
+	match4AwayGoals: number,
+    match5HomeGoals: number,
+	match5AwayGoals: number,
+    match6HomeGoals: number,
+	match6AwayGoals: number,
+    match7HomeGoals: number,
+	match7AwayGoals: number,
+}

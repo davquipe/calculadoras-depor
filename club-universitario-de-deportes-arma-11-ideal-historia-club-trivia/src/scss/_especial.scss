@@ -1,0 +1,174 @@
+@import './variables';
+
+.cont-principal {
+    margin-top: 46px;
+}
+
+.cont-layout {
+    max-width: 960px;
+}
+
+.section-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 22.21px;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font: 500 18px/26px $font-ubuntu;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 13.2px;
+
+        &--my-team {
+            display: flex;
+            flex-direction: row;
+            font: 500 23px/18px $font-ubuntu;
+            align-items: baseline;
+            color: white;
+            margin-top: 23.2px;
+        }
+
+        &--votes {
+            display: flex;
+            flex-direction: row;
+            font: 500 23px/18px $font-ubuntu;
+            align-items: baseline;
+            color: white;
+            margin-top: 22.2px;
+            gap: 50px;
+            margin-bottom: 98px;
+        }
+
+        &__link {
+            border-bottom: 4px solid white;
+            padding-bottom: 6px;
+            cursor: pointer;
+        }
+
+        &__no-link {
+            cursor: pointer;
+        }
+    }
+
+    &__instruction {
+        font: 500 22px/26px $font-ubuntu;
+        color: white;
+        text-align: center;
+        margin-top: 60px;
+
+        &-my-team {
+            font: 700 18px/33px $font-ubuntu;
+            color: #FAF19F;
+            margin-top: 55px;
+        }
+    }
+
+    &__rankingg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+
+    &__players {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--arquero {
+            margin: auto;
+            position: relative;
+            top: 10px;
+        }
+
+        &--centrales {
+            display: flex;
+            position: relative;
+            top: 10px;
+            gap: 65px;
+        }
+
+        &--laterales {
+            display: flex;
+            gap: 255px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        &--contenciones {
+            display: flex;
+            gap: 25px;
+            position: relative;
+            top: 35px;
+        }
+
+        &--volantes {
+            display: flex;
+            gap: 230px;
+            position: relative;
+            top: 25px;
+        }
+
+        &--delanteros {
+            display: flex;
+            gap: 25px;
+            position: relative;
+            top: 65px;
+        }
+    }
+}
+
+.button-player {
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+        width: 73px;
+        background-color: #FAF19F;
+        font: 700 12px/12px $font-ubuntu;
+        text-transform: uppercase;
+        color: #D00A22;
+        padding: 4px 0;
+        position: absolute;
+        top: 64px;
+    }
+}
+
+.buttons {
+    display: flex;
+    margin-top: 265px;
+    gap: 21px;
+
+    &__variant {
+        margin-top: 90px;
+    }
+}
+
+.custom-button {
+    width: 185px;
+    height: 56px;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    background: #ED1C24;
+    color: white;
+    font: 700 18px/22px $font-ubuntu;
+}
+
+.table-ranking {
+    display: flex;
+    font: 700 22px/36px $font-ubuntu;
+    width: 80%;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+
+    &>span {
+        color: white;
+    }
+}

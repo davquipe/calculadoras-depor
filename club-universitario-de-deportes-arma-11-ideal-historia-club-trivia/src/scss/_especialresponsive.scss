@@ -1,0 +1,163 @@
+@import 'variables';
+
+@media screen and (max-width: 536px) {
+    .table-ranking {
+        width: 100%;
+        font: 700 16px/18px $font-ubuntu;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .section-principal__instruction {
+        margin-top: 50px !important;
+        margin-bottom: -5px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        .ctn-header {
+            max-width: 640px;
+        }
+    }
+
+    .section-principal {
+        margin-top: 22.21px;
+
+        &__description {
+            color: white;
+            font: 500 14px/16px $font-ubuntu;
+            margin-bottom: 0;
+            margin-top: 18px;
+
+            &--my-team {
+                font: 500 16px/18px $font-ubuntu;
+                margin-top: 18px;
+            }
+
+            &--votes {
+                font: 500 15px/18px $font-ubuntu;
+                gap: 35px;
+                margin-bottom: 50px;
+            }
+
+            &__link {
+                border-bottom: 3px solid white;
+                padding-bottom: 6px;
+                cursor: pointer;
+            }
+
+            &__no-link {
+                cursor: pointer;
+            }
+        }
+
+        &__instruction {
+            font: 500 15px/18px $font-ubuntu;
+            color: white;
+            text-align: center;
+            margin-top: 45px;
+
+            &-my-team {
+                font: 700 15px/18px $font-ubuntu;
+                color: #FAF19F;
+                margin-top: 50px;
+            }
+        }
+
+        &__players {
+            margin-top: 20px;
+
+            &--arquero {
+                position: relative;
+                bottom: 10px;
+                margin: auto;
+            }
+
+            &--centrales {
+                gap: 65px;
+                top: 20px;
+            }
+
+            &--laterales {
+                bottom: 0;
+                top: 20px;
+                gap: 200px;
+            }
+
+            &--contenciones {
+                gap: 35px;
+                top: 52px;
+            }
+
+            &--volantes {
+                gap: 180px;
+                top: 55px;
+            }
+
+            &--delanteros {
+                gap: 20px;
+                top: 110px;
+            }
+        }
+    }
+
+    .banner-heading {
+        &__banner {
+            width: none;
+            height: 100px;
+        }
+
+        &__logo {
+            max-width: 320px;
+            bottom: 52px;
+        }
+    }
+
+    .button-player {
+        border: none;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__text {
+            width: 53px;
+            background-color: #FAF19F;
+            font: 700 8px/12px $font-ubuntu;
+            text-transform: uppercase;
+            color: #D00A22;
+            padding: 2px 0;
+            position: absolute;
+            top: 48px;
+        }
+    }
+
+    .buttons {
+        margin-top: 290px;
+
+        &__variant {
+            margin-top: 45px;
+        }
+    }
+
+    .custom-button {
+        width: 125px;
+        height: 30px;
+        border: 2px solid #FFFFFF;
+        border-radius: 25px;
+        background: #ED1C24;
+        color: white;
+        font: 700 13px/16px $font-ubuntu;
+    }
+
+    .icon-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icons {
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,195 @@
+@import 'variables';
+@import 'mixins';
+
+.table-sm>:not(caption)>*>* {
+    padding: 0.6rem;
+}
+
+.cont-principal {
+    margin-top: 46px;
+}
+
+.cont-layout {
+    max-width: 960px;
+}
+
+.banner-heading,
+.content-scores,
+.content-standings {
+    contain: content;
+    content-visibility: auto;
+}
+
+.banner-heading {
+    contain-intrinsic-size: $layoutMaxWidth $bannerHeadingHeight;
+}
+
+.content-scores {
+    contain-intrinsic-size: $layoutMaxWidth 440px;
+}
+
+.content-standings {
+    contain-intrinsic-size: $layoutMaxWidth 890px;
+}
+
+.carousel-container {
+    width: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+}
+
+.carousel-control-prev {
+    left: $positionLeftButtonControlSlider;
+}
+
+.carousel-control-next {
+    right: $positionRightButtonControlSlider;
+}
+
+.btn-matchday {
+    width: $matchDayWidth;
+    height: $matchDayHeight;
+}
+
+.btn-matchday,
+.btn-form,
+.btn-reset {
+    @include fontStyle(18px, 32px, $preloMedium);
+}
+
+.btn-reset {
+    @include border(1px, $blackColor);
+}
+
+.btn-bet {
+    font: 700 18px/34px $preloMedium;
+}
+
+.btn-form,
+.btn-bet {
+    @include backgroundColor($bgFormButtonColor);
+}
+
+.match-days {
+    @include backgroundColor($bgMatchDaysColor);
+}
+
+.btn-matchday {
+    @include border(1px, $blackColor);
+    @include backgroundColor($whiteColor);
+}
+
+.active-match-day {
+    @include border(1px, $whiteColor);
+    @include backgroundColor($activeBgMatchDaysColor);
+    @include fontColor($whiteColor);
+}
+
+.standing-head {
+    @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloExtraBold);
+}
+
+.epigraph,
+.standing-data,
+.match-form,
+.input-score {
+    @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloMedium);
+}
+
+.standing-head,
+.match-form,
+.standing-data,
+.input-score:disabled,
+.input-score[readonly] {
+    @include fontColor($standingColor);
+}
+
+.bg-odd-match {
+    @include backgroundColor($bgOddMatch);
+}
+
+.border-team {
+    border-left: 1px solid $standingColor;
+    border-right: 1px solid $standingColor;
+}
+
+.content-team {
+    width: calc(100% - #{$scoreSeparatorWidth/2});
+}
+
+.input-score {
+    @include backgroundColor($bgInputScore);
+    @include fontColor($inputScoreColor);
+    width: $matchDayWidth;
+    height: $matchDayHeight;
+}
+
+.score-separator {
+    width: $scoreSeparatorWidth;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.input-score:disabled,
+.input-score[readonly] {
+    @include backgroundColor($bgReadOnlyInputScoreColor);
+    @include fontColor($inputReadOnlyScoreColor);
+}
+
+.heading-table {
+    @include fontColor($standingColor);
+    @include fontStyle($headingTableFontSize, $headingTableFontSpacing, $preloMedium);
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-style: unset !important;
+}
+
+@include backgroundColorPositionClausura(1, $matchDays); //Cambiar Apertura o Claususra
+
+@include backgroundColorPositionApertura(1, $matchDays);
+
+.legend,
+.error {
+    @include fontStyle($legendFontSize, $legendFontSpacing, $preloMedium);
+}
+
+.legend {
+    @include fontColor($standingColor);
+}
+
+@include itemLegendColor($amountOfLegends);
+
+.btn-show-apertura {
+    @include fontStyle($btnAperturaFontSize, $btnAperturaFontSpacing, $preloBold);
+    @include backgroundColor($btnBgColor);
+    border: 2px solid $whiteColor;
+    border-radius: 25px;
+}
+
+.logo-brand-footer {
+    margin-top: -70px;
+}
+
+.bg-footer {
+    @include backgroundColor($bgFooter);
+    height: 170px;
+}

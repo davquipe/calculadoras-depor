@@ -1,0 +1,114 @@
+@import 'variables';
+
+@mixin fontPaths($path, $fontName) {
+    @font-face {
+        font-family: $fontName;
+        src: url($path + $fontName + '.eot?#iefix') format('embedded-opentype'),
+            /* IE6-IE8 */
+            url($path + $fontName + '.woff2') format('woff2'),
+            /* Super Modern Browsers */
+            url($path + $fontName + '.woff') format('woff'),
+            /* Pretty Modern Browsers */
+            url($path + $fontName + '.ttf') format('truetype'),
+            /* Safari, Android, iOS */
+            url($path + $fontName + '.otf') format('otf');
+        /* Safari, Android, iOS */
+    }
+}
+
+@mixin backgroundColor($bgColor) {
+    background-color: $bgColor;
+}
+
+@mixin fontColor($color) {
+    color: $color;
+}
+
+@mixin fontStyle($size, $lineHeight, $fontName) {
+    font: 500 #{$size}/#{$lineHeight} $fontName;
+}
+
+@mixin fontStyleGallery($size, $lineHeight) {
+    font-weight: 500;
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+
+@mixin border($height, $color) {
+    border: $height solid $color;
+}
+
+@mixin backgroundColorPositionApertura($start, $end) {
+
+    $bgColor: $bgFirstPosition;
+
+    @for $i from $start through $end +1 {
+
+        //revisar según matchDays
+        @if $i < 9 {
+            $bgColor: $bgFirstPosition;
+        }
+
+        @else if $i < 25 {
+            $bgColor: $bgMiddlePosition;
+        }
+
+        @else if $i >24 {
+            $bgColor: #F5F5F5;
+        }
+
+        .bg-normal-#{$i} {
+            @include backgroundColor($bgColor);
+        }
+    }
+}
+
+@mixin backgroundColorPositionClausura($start, $end) {
+    //Clausura?
+
+    $bgColor: '';
+
+    @for $i from $start through $end +1 {
+
+        //revisar según matchDays
+        @if $i < 3 {
+            $bgColor: $bgFirstPosition;
+        }
+
+        @else if $i ==3 {
+            $bgColor: $bgSecondPosition;
+        }
+
+        @else if $i ==4 {
+            $bgColor: $bgThirdPosition;
+        }
+
+        @else if $i >4 and $i < 9 {
+            $bgColor: $bgFourthPosition;
+        }
+
+        @else if $i >=9 and $i < 16 {
+            $bgColor: $bgMiddlePosition;
+        }
+
+        @else {
+            $bgColor: $bgLastPosition;
+        }
+
+        .bg-position-#{$i} {
+            @include backgroundColor($bgColor);
+        }
+    }
+}
+
+@mixin itemLegendColor($n) {
+
+    @each $n, $bgLegend in $bgLegends {
+        .legend-#{$n} {
+            @include backgroundColor($bgLegend);
+            width: 28px;
+            height: 26px;
+        }
+    }
+}

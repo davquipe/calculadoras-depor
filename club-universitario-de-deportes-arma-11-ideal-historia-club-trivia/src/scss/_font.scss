@@ -1,0 +1,43 @@
+$urlAssets: 'https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_general/depor/prod/';
+$path: 'especiales/medallero-juegos-olimpicos-paris-2024-oro-plata-bronce-clasificacion-general-usa-mexico-brasil-colombia-ecuador-argentina-peru-venezuela/fonts/Ubuntu-Medium.ttf';
+$pathBarlow: 'especiales/medallero-juegos-olimpicos-paris-2024-oro-plata-bronce-clasificacion-general-usa-mexico-brasil-colombia-ecuador-argentina-peru-venezuela/fonts/Barlow-Bold.ttf';
+$pathNew: 'club-universitario-de-deportes-arma-11-ideal-historia-club-trivia/img/fondo-con-cancha.png';
+$pathNew2: 'club-universitario-de-deportes-arma-11-ideal-historia-club-trivia/img/fondo-sin-cancha.png';
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url($urlAssets + $path) format('ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url($urlAssets + $pathBarlow) format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.back-con-cancha {
+    background-image: url($urlAssets + $pathNew);
+    background-size: cover;
+    background-position: center;
+    height: 1044px;
+}
+
+.back-sin-cancha {
+    background-image: url($urlAssets + $pathNew2);
+    background-size: cover;
+    background-position: center;
+    height: 1044px;
+}
+
+@media screen and (max-width: 640px) {
+    .back-con-cancha {
+        height: 932px;
+    }
+
+    .back-sin-cancha {
+        height: 932px;
+    }
+}
