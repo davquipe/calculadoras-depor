@@ -15,6 +15,7 @@ $whiteColor: #FFF;
 $blackColor: #000;
 $lightGreen: #EF000D; //#f8670b betsson;
 $backgroundColorBody: $whiteColor;
+$yellow2025: #CFD607;
 
 //header Depor
 $backgroundColorHeader: $blackColor;
@@ -26,7 +27,7 @@ $headerHeight: 46px;
 
 //especial
 $layoutMaxWidth: 960px;
-$bgMatchDaysColor: $lightGreen;
+$bgMatchDaysColor: $yellow2025;
 $activeBgMatchDaysColor: $blackColor;
 $standingColor: $blackColor;
 $bgFirstPosition: #CFD607; //#fcc772;betsson
@@ -44,7 +45,7 @@ $bgLegends: (
     4: $bgFourthPosition,
     5: $bgLastPosition
 );
-$matchDays: 17; //cambiar por nro de fechas
+$matchDays: 19; //cambiar por nro de fechas
 $amountOfLegends: 5; //1 para Apertura, 5 para el Clausura. Ver src/Constants.ts
 $positionLeftButtonControlSlider: -35px;
 $positionRightButtonControlSlider: -30px;

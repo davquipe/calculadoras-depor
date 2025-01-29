@@ -4,6 +4,7 @@ import { useScores } from '../../hooks/useScores';
 import Error from '../common/Error';
 // import CalculatorA from '../calculator/CalculatorA';
 import CalculatorACA from '../calculator/CalculatorACA';
+import CalculatorA from '../calculator/CalculatorA';
 
 type HomeProps = {
     defaultMatchDay: string
@@ -18,7 +19,8 @@ const Home = ({ defaultMatchDay }: HomeProps) => {
             {error && <Error />}
             {
                 (!isLoading && isSuccess && (typeof data !== 'undefined')) &&
-                <CalculatorACA allScores={data} defaultMatchDay={defaultMatchDay} />
+                // <CalculatorACA allScores={data} defaultMatchDay={defaultMatchDay} />
+                <CalculatorA allScores={data} defaultMatchDay={defaultMatchDay} />
             }
         </>
     )

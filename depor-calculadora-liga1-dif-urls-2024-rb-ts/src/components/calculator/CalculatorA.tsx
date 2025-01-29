@@ -422,7 +422,6 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
     const [activeMatchDaysBlock, setActiveMatchDaysBlock] = useState<number>(defaultActiveMatchDaysBlock);
 
     const handleActiveMatchDaysBlock = (selectedActiveMatchDaysBlock: number) => setActiveMatchDaysBlock(selectedActiveMatchDaysBlock);
-
     return (
         <section className="content-calculator">
             <MatchDays

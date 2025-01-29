@@ -22,7 +22,7 @@ const Legend: FC<{ isAcumulado: boolean, isClausura: boolean }> = ({ isAcumulado
     return (
         <Row as="section" className="mx-0 px-1 py-3 py-md-5">
             {dividedLegend.map((divLegend, i) =>
-                <Col key={i + 1} as="section" xs="12" md="6">
+                <Col key={i + 1} as="section" xs="12" md="6" style={{ width: '100%' }}>
                     {divLegend.map(legend =>
                         <Row key={legend.id} as="section">
                             <Col as="article" xs="1" className={`pb-1 legend-${legend.id}`}>

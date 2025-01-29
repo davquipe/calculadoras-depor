@@ -18,7 +18,9 @@ const TeamStanding = ({ id, position, positionClass, name, playedMatches, wonMat
             <td><span className="align-bottom">{position}</span></td>
             <td>
                 <article className="d-flex align-items-center justify-content-start">
-                    <Image className="pe-1 pe-md-2" src={`${urlShields}/img/escudos/${id}.png`} alt={name} loading="lazy" />
+                    <div className='table-team'>
+                        <Image className="pe-1 pe-md-2" src={`${urlShields}/img/escudos/${id}.png`} alt={name} loading="lazy" />
+                    </div>
                     <span className="ms-1 ms-md-3 text-start text-md-center">{name}</span>
                 </article>
             </td>

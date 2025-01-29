@@ -13,6 +13,13 @@
     max-width: 960px;
 }
 
+.epigraph-rest {
+    @include fontStyle(18px, 24px, $preloMedium);
+    text-align: center;
+    margin: 21px 0 14px;
+
+}
+
 .banner-heading,
 .content-scores,
 .content-standings {
@@ -92,6 +99,18 @@
     @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloExtraBold);
 }
 
+.team-row {
+    width: 54px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>img {
+        height: 37px;
+    }
+}
+
 .epigraph,
 .standing-data,
 .match-form,
@@ -118,6 +137,18 @@
 
 .content-team {
     width: calc(100% - #{$scoreSeparatorWidth/2});
+    display: flex;
+}
+
+.table-team {
+    width: 40px;
+    height: 40px;
+
+    &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 .input-score {

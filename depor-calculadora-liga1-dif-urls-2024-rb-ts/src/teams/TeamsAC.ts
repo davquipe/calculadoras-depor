@@ -2,9 +2,9 @@
 import { Team } from "../types/types";
 
 export const teamsAC: Team = {
-    "UCV": {
-        id: "UCV",
-        name: "Vallejo",
+    "JP2": {
+        id: "JP2",
+        name: "Juan Pablo II",
         seasons: [
             {
                 name: 'apertura',
@@ -119,9 +119,9 @@ export const teamsAC: Team = {
             }
         ]
     },    
-    "UCO": {
-        id: "UCO",
-        name: "Unión Comercio",
+    "ALU": {
+        id: "ALU",
+        name: "Alianza Universidad",
         seasons: [
             {
                 name: 'apertura',
@@ -314,9 +314,9 @@ export const teamsAC: Team = {
             }
         ]  
     },    
-    "MAN": {
-        id: "MAN",
-        name: "Mannucci",
+    "AYA": {
+        id: "AYA",
+        name: "Ayacucho FC",
         seasons: [
             {
                 name: 'apertura',
@@ -472,7 +472,7 @@ export const teamsAC: Team = {
     },      
     "COU": {
         id: "COU",
-        name: "Comerciantes U.",
+        name: "Comerciantes Unidos",
         seasons: [
             {
                 name: 'apertura',
@@ -703,6 +703,46 @@ export const teamsAC: Team = {
                 goalsDifference: 0
             }
         ]  
+    },
+    "BIN": {
+        id: "BIN",
+        name: "Binacional",
+        seasons: [
+            {
+                name: 'apertura',
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            {
+                name: 'clausura',
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            },
+            {
+                name: 'acumulado',
+                points: 0,
+                playedMatches: 0,
+                wonMatches: 0,
+                drawnMatches: 0,
+                lostMatches: 0, 
+                goalsFor: 0,
+                goalsAgainst: 0,
+                goalsDifference: 0
+            }
+        ]  
     }
 };
 
+export const registeredTeams = Array.from(new Set(Object.keys(teamsAC)))

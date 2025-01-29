@@ -2,98 +2,150 @@
 @import 'mixins';
 
 @media screen and (max-width: 768px) {
-    .banner-heading{
+    .banner-heading {
         height: $bannerHeadingTablet768Height;
     }
 }
-@media screen and (max-width: 640px) {  
+
+@media screen and (max-width: 640px) {
     .table-sm>:not(caption)>*>* {
         padding: 0.25rem;
     }
-    .banner-heading{
+
+    .banner-heading {
         height: $bannerHeadingTablet640Height;
-    }    
-    .standing-head{
-        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloExtraBold);        
     }
-    .epigraph, .standing-data, .match-form, .input-score{
-        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloMedium);    
-    }    
-    .btn-matchday{        
+
+    .standing-head {
+        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloExtraBold);
+    }
+
+    .epigraph,
+    .standing-data,
+    .match-form,
+    .input-score {
+        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloMedium);
+    }
+
+    .btn-matchday {
         width: $matchDayMobileWidth;
-        height: $matchDayMobileHeight;  
+        height: $matchDayMobileHeight;
     }
-    .btn-bet{
+
+    .btn-bet {
         font: 700 14px/19px $preloMedium;
     }
-    .btn-matchday, .btn-form, .btn-reset{
-        @include fontStyle(14px, 19px, $preloMedium);  
+
+    .epigraph-rest {
+        @include fontStyle(14px, 19px, $preloMedium);
+        margin: 15px 0 10px;
     }
-    .input-score{
+
+    .btn-matchday,
+    .btn-form,
+    .btn-reset {
+        @include fontStyle(14px, 19px, $preloMedium);
+    }
+
+    .input-score {
         width: $matchDayMobileWidth;
-        height: $matchDayMobileHeight;  
+        height: $matchDayMobileHeight;
     }
+
     .carousel-control-prev {
         left: $positionLeftMobileButtonControlSlider;
     }
+
     .carousel-control-next {
         right: $positionRightMobileButtonControlSlider;
     }
-    .heading-table{
-        @include fontStyle($headingTableMobileFontSize, $headingTableMobileFontSpacing, $preloMedium);      
+
+    .heading-table {
+        @include fontStyle($headingTableMobileFontSize, $headingTableMobileFontSpacing, $preloMedium);
     }
-    .legend, .error{
-        @include fontStyle($legendMobileFontSize, $legendMobileFontSpacing, $preloMedium);        
+
+    .legend,
+    .error {
+        @include fontStyle($legendMobileFontSize, $legendMobileFontSpacing, $preloMedium);
     }
-    .btn-show-apertura{
+
+    .btn-show-apertura {
         @include fontStyle($btnAperturaMobileFontSize, $btnAperturaMobileFontSpacing, $preloBold);
     }
-    .bg-footer{
+
+    .bg-footer {
         height: 120px;
-    }    
+    }
+
+    .team-row {
+        width: 40px;
+        height: 30.37px;
+
+        &>img {
+            height: 25px;
+        }
+    }
+
+    .table-team {
+        width: 30px;
+        height: 30px;
+    }
 }
-@media screen and (max-width: 540px) {  
-    .banner-heading{
+
+@media screen and (max-width: 540px) {
+    .banner-heading {
         height: $bannerHeadingTablet540Height;
-    } 
+    }
 }
-@media screen and (max-width: 539px) {  
-    .carousel-container{
+
+@media screen and (max-width: 539px) {
+    .carousel-container {
         width: 85%;
     }
 }
-@media screen and (max-width: 420px) {  
-    .banner-heading{
+
+@media screen and (max-width: 420px) {
+    .banner-heading {
         height: $bannerHeadingMobileHeight;
-    } 
+    }
 }
+
 @media screen and (max-width: 414px) {
-    .standing-head{
-        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloExtraBold);        
+    .standing-head {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloExtraBold);
     }
-    .match-form, .input-score, .standing-data{
-        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloMedium);    
+
+    .match-form,
+    .input-score,
+    .standing-data {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloMedium);
     }
 }
+
 @media screen and (max-width: 393px) {
-    .banner-heading{
+    .banner-heading {
         height: $bannerHeadingXsMobileHeight;
     }
-    .input-score{
+
+    .input-score {
         width: $matchDayXsMobileWidth;
-        height: $matchDayXsMobileHeight;  
+        height: $matchDayXsMobileHeight;
     }
-    .legend, .error{
-        @include fontStyle($legendXsMobileFontSize, $legendXsMobileFontSpacing, $preloMedium);        
-    }    
+
+    .legend,
+    .error {
+        @include fontStyle($legendXsMobileFontSize, $legendXsMobileFontSpacing, $preloMedium);
+    }
 }
+
 @media screen and (max-width: 375px) {
-    .banner-heading{
+    .banner-heading {
         height: $bannerHeadingXs375MobileHeight;
     }
 }
+
 @media screen and (max-width: 360px) {
-    .banner-heading{
+    .banner-heading {
         height: $bannerHeadingXs360MobileHeight;
     }
 }

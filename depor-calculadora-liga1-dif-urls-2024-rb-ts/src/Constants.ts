@@ -11,15 +11,16 @@ const domainAssets = "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales
 const urlCommonAssets = `${domainAssets}elementos-comunes/`;
 
 //Variable
-const titleEspecial = 'Calculadora Liga 1: ver tabla de posiciones y resultados de la Primera División del Fútbol Peruano 2024';
-const slugEspecial = 'calculadora-liga-1-2024-tabla-de-posiciones-resultados-pronosticos-del-futbol-peruano-torneo-apertura-clausura';
-const slugShields = 'calculadora-liga-1-torneo-clausura-2022-tabla-posiciones-acumulada-predicciones-futbol-peruano-resultados-multimedia-nndd';
+const titleEspecial = 'Calculadora Liga 1 2025: tabla de posiciones acumulada, resultados y pronósticos del fútbol peruano en el Torneo Apertura y Clausura';
+const slugEspecial = 'calculadora-liga-1-2025-tabla-de-posiciones-resultados-pronosticos-del-futbol-peruano-torneo-apertura-clausura';
+const slugShields = 'calculadora-liga-1-2025-tabla-de-posiciones-resultados-pronosticos-del-futbol-peruano-torneo-apertura-clausura';
 const urlEspecial = `${domainMarca}${slugEspecial}/index.html`;
 const urlAssets = `${domainAssets}${slugEspecial}`;
 const urlShields = `${domainAssets}${slugShields}`;
-const currentSeason = 'Clausura'; //Apertura o Clausura
-const googleSheetKey = '1tzLgmpgiAILtvk3YSnf0e5Iii43tISTVBazSzX71rhE'; //A y C 2024 Pro
+const currentSeason = 'Apertura'; //Apertura o Clausura
+// const googleSheetKey = '1tzLgmpgiAILtvk3YSnf0e5Iii43tISTVBazSzX71rhE'; //A y C 2024 Pro
 //const googleSheetKey = '1EfMMDFvfFjCPwdCwzgiANmu_uxixYlwsKBxt3t6pexg'; //A y C 2024 Dev
+const googleSheetKey = '1gy4DEV99HKqiyq3Unpbyk84uaqCemIOfpwhiMUvehcA'; //A y C 2025 Pro
 const query = 'SELECT A, B, C, D, E, F, G, H, I, J, K, L, M';
 const qryParam = '?';
 const qryMatchDay = 'fecha';
@@ -27,12 +28,12 @@ const isPlayed = 'SÍ';
 const isCurrentMatchDay = 'SÍ';
 const notPlayed = '-';
 const epigraph = "Llena las casillas con tus predicciones y chequea si tu equipo está cerca de ser campeón o peleará el descenso";
-const keyData = 'deporCalcLiga12024';
+const keyData = 'deporCalcLiga12025';
 const staleTime = 60000;
 const legendApertura: LegendItem[] = [
         {
         id: 1,
-        description: "Ganador del Torneo Apertura clasifica a la final nacional siempre que se ubique entre los 8 primeros del Acumulado"
+        description: "Ganador del Apertura clasifica a la final nacional siempre y cuando quede entre los 7 primeros del Acumulado"
     }
 ]
 const legendClausura: LegendItem[] = [
