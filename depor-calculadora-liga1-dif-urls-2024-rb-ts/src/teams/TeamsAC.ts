@@ -394,7 +394,7 @@ export const teamsAC: Team = {
     },
     "GAR": {
         id: "GAR",
-        name: "Garcilaso",
+        name: "Deportivo Garcilaso",
         seasons: [
             {
                 name: 'apertura',
@@ -706,7 +706,7 @@ export const teamsAC: Team = {
     },
     "BIN": {
         id: "BIN",
-        name: "Binacional",
+        name: "Deportivo Binacional",
         seasons: [
             {
                 name: 'apertura',

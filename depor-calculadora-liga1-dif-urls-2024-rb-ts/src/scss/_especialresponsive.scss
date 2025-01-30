@@ -1,20 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
-@media screen and (max-width: 768px) {
-    .banner-heading {
-        height: $bannerHeadingTablet768Height;
-    }
-}
+
 
 @media screen and (max-width: 640px) {
     .table-sm>:not(caption)>*>* {
         padding: 0.25rem;
     }
 
-    .banner-heading {
-        height: $bannerHeadingTablet640Height;
-    }
+
 
     .standing-head {
         @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloExtraBold);
@@ -92,11 +86,6 @@
     }
 }
 
-@media screen and (max-width: 540px) {
-    .banner-heading {
-        height: $bannerHeadingTablet540Height;
-    }
-}
 
 @media screen and (max-width: 539px) {
     .carousel-container {
@@ -104,11 +93,7 @@
     }
 }
 
-@media screen and (max-width: 420px) {
-    .banner-heading {
-        height: $bannerHeadingMobileHeight;
-    }
-}
+
 
 @media screen and (max-width: 414px) {
     .standing-head {
@@ -123,9 +108,6 @@
 }
 
 @media screen and (max-width: 393px) {
-    .banner-heading {
-        height: $bannerHeadingXsMobileHeight;
-    }
 
     .input-score {
         width: $matchDayXsMobileWidth;
@@ -135,17 +117,5 @@
     .legend,
     .error {
         @include fontStyle($legendXsMobileFontSize, $legendXsMobileFontSpacing, $preloMedium);
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .banner-heading {
-        height: $bannerHeadingXs375MobileHeight;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .banner-heading {
-        height: $bannerHeadingXs360MobileHeight;
     }
 }
