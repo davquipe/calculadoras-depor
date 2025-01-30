@@ -2,3 +2,4 @@
 **/.env
 **/ss.env
 node_modules
+build

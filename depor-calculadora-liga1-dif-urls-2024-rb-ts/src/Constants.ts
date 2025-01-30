@@ -73,7 +73,7 @@ const legend: LegendItem[] = [
 const aperturaId = 0;
 const clausuraId = 1;
 const accumulatedId = 2;
-const sessionStorageKey = 'deporCalcLiga12024';
+const sessionStorageKey = 'deporCalcLiga12025';
 const urlBetButton = 'https://ad.doubleclick.net/ddm/trackclk/N244601.4724729DEPOR.COM/B30172824.369949875;dc_trk_aid=560527695;dc_trk_cid=194185734;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=;dc_tdv=1';
 const textBetButton = 'Juega aquí';
 
