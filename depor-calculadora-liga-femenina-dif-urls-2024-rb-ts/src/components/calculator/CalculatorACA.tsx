@@ -1,8 +1,9 @@
 import { useState, useEffect, useReducer } from 'react';
+import Button from 'react-bootstrap/Button';
 import { useSearchParams } from 'react-router-dom';
 
 //constants
-import { aperturaId, currentSeason, isCurrentMatchDay, isPlayed, sessionStorageKey } from '../../Constants';
+import { accumulatedId, aperturaId, clausuraId, currentSeason, isCurrentMatchDay, isPlayed, sessionStorageKey } from '../../Constants';
 
 //types
 import { CalculatorProps, ChangeMatchDayAction, ChangeMatchDayState, FormFields, Match, MatchResult, MatchByMatchDay, Row, Team, TeamData } from '../../types/types';
@@ -17,7 +18,7 @@ import Legend from '../common/Legend';
 import MatchDays from './MatchDays';
 import MatchDayForm from '../form/MatchDayForm';
 
-type CalculatorAProps = CalculatorProps;
+type CalculatorACAProps = CalculatorProps;
 
 const defaultMatchResults = { pointsHome: 0, pointsAway: 0, drawnHome: '', drawnAway: '', winner: '', loser: '' };
 
@@ -38,16 +39,20 @@ const defaultMatch = {
     drawnAway: '',
     fromApi: false,
     fromSessionStorage: false,
-    season: ''
+    season: '',
+    additionalPointsHome: 0,
+    additionalPointsAway: 0
 }
 
-const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
+const CalculatorACA = ({ allScores, defaultMatchDay }: CalculatorACAProps) => {
 
     const middleIndex = Math.ceil(allScores.length / 2);
     const aperturaScores: Row[] = allScores.slice().splice(0, middleIndex);
+    const clausuraScores = allScores.slice().splice(-middleIndex);
 
     const [showStandings, setShowStandings] = useState<boolean>(false);
-    const [aperturaStandings, setAperturaStandings] = useState<TeamData[]>([]);
+    const [standings, setStandings] = useState<TeamData[][]>([]);
+    const [showAperturaStandings, setShowAperturaStandings] = useState<boolean>(false);
 
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -79,6 +84,8 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         let drawnAway = '';
         let loser = '';
         let fromSessionStorage = false;
+        let additionalPointsHome = 0;
+        let additionalPointsAway = 0;
 
         (Object.values(scores)).map(score => {
 
@@ -91,6 +98,8 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
             away = score.c[6]['v'];
             finished = (score.c[7]['v'] === isPlayed) && true;
             currentMatchDay = (score.c[8]['v'] === isCurrentMatchDay) && true;
+            additionalPointsHome = parseInt(score.c[9]['v']) - parseInt(score.c[10]['v']);
+            additionalPointsAway = parseInt(score.c[11]['v']) - parseInt(score.c[12]['v']);
 
             if (finished) {
                 matchResults = getMatchResults(home, away, goalsHome, goalsAway, pointsHome, pointsAway, drawnHome, drawnAway, winner, loser);
@@ -114,7 +123,9 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
                 drawnAway: matchResults.drawnAway,
                 fromApi,
                 fromSessionStorage,
-                season
+                season,
+                additionalPointsHome,
+                additionalPointsAway
             };
 
             matches[matchNumber] = match;
@@ -172,8 +183,9 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         return matches;
     }
 
-    const aperturaMatchesFromApi = getMatchesFromApi(aperturaScores);
-    const aperturaMatchesFromSessionStorage = getMatchesFromSessionStorage();
+    const aperturaMatches = getMatchesFromApi(aperturaScores);
+    const clausuraMatchesFromApi = getMatchesFromApi(clausuraScores);
+    const clausuraMatchesFromSessionStorage = getMatchesFromSessionStorage();
 
     const restoreMatchesKeys = (matches: Match[]) => {
         const entries = Object.keys(matches).map(matchKey => {
@@ -186,7 +198,7 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         return Object.assign([], ...entries);
     }
 
-    const aperturaMatches = (aperturaMatchesFromSessionStorage.length > 0) ? restoreMatchesKeys(aperturaMatchesFromSessionStorage) : aperturaMatchesFromApi;
+    const clausuraMatches = (clausuraMatchesFromSessionStorage.length > 0) ? restoreMatchesKeys(clausuraMatchesFromSessionStorage) : clausuraMatchesFromApi;
 
     const getMatchesByMatchDay = (matches: Match[]) => {
         const matchesByMatchDay = matches.reduce((group: MatchByMatchDay, match: Match) => ({
@@ -197,7 +209,7 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         return matchesByMatchDay;
     }
 
-    const matchesByMatchDay = getMatchesByMatchDay(aperturaMatches);
+    const matchesByMatchDay = getMatchesByMatchDay(clausuraMatches);
 
     const getCurrentMatchDay = (matches: Match[]) => (typeof defaultMatchDay === 'string') ? parseInt(defaultMatchDay) : getCurrentMatchDayFromApi(matches);
 
@@ -251,6 +263,8 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         let wonMatches = 0;
         let drawnMatches = 0;
         let lostMatches = 0;
+        let additionalPointsHome = 0;
+        let additionalPointsAway = 0;
 
         const arrayTeams = Object.values(teams);
 
@@ -262,12 +276,14 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
                         playedMatches++;
                         goalsFor += match.goalsHome;
                         goalsAgainst += match.goalsAway;
+                        additionalPointsHome += match.additionalPointsHome!;
                     }
                     if (team.id === match.away) {
                         pointsAway += match.pointsAway;
                         playedMatches++;
                         goalsFor += match.goalsAway;
                         goalsAgainst += match.goalsHome;
+                        additionalPointsAway += match.additionalPointsAway!;
                     }
                     if (team.id === match.winner) {
                         wonMatches++;
@@ -289,16 +305,18 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
             team.seasons[seasonId].wonMatches = wonMatches;
             team.seasons[seasonId].lostMatches = lostMatches;
             team.seasons[seasonId].drawnMatches = drawnMatches;
+            team.seasons[seasonId].additionalPoints = additionalPointsHome + additionalPointsAway;
 
             pointsHome = 0;
             pointsAway = 0;
             playedMatches = 0;
             goalsFor = 0;
             goalsAgainst = 0;
-
             wonMatches = 0;
             drawnMatches = 0;
             lostMatches = 0;
+            additionalPointsHome = 0;
+            additionalPointsAway = 0;
         });
 
         arrayTeams.sort((a, b) => (b.seasons[seasonId].points > a.seasons[seasonId].points ? 1 : -1));
@@ -306,8 +324,31 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         return breakTies(arrayTeams, seasonId);
     }
 
+    const getAccumulatedStandings = () => {
+        const arrayTeams = Object.values(teamsAC);
+
+        arrayTeams.map(team => {
+            team.seasons[accumulatedId].playedMatches = team.seasons[aperturaId].playedMatches + team.seasons[clausuraId].playedMatches;
+            team.seasons[accumulatedId].wonMatches = team.seasons[aperturaId].wonMatches + team.seasons[clausuraId].wonMatches;
+            team.seasons[accumulatedId].drawnMatches = team.seasons[aperturaId].drawnMatches + team.seasons[clausuraId].drawnMatches;
+            team.seasons[accumulatedId].lostMatches = team.seasons[aperturaId].lostMatches + team.seasons[clausuraId].lostMatches;
+            team.seasons[accumulatedId].goalsFor = team.seasons[aperturaId].goalsFor + team.seasons[clausuraId].goalsFor;
+            team.seasons[accumulatedId].goalsAgainst = team.seasons[aperturaId].goalsAgainst + team.seasons[clausuraId].goalsAgainst;
+            team.seasons[accumulatedId].goalsDifference = team.seasons[aperturaId].goalsDifference + team.seasons[clausuraId].goalsDifference;
+            team.seasons[accumulatedId].points = (team.seasons[aperturaId].points + team.seasons[clausuraId].points) + (team.seasons[aperturaId].additionalPoints! + team.seasons[clausuraId].additionalPoints!);
+        });
+
+        arrayTeams.sort((a, b) => (b.seasons[accumulatedId].points > a.seasons[accumulatedId].points ? 1 : -1));
+
+        return breakTies(arrayTeams, accumulatedId);
+    }
+
     useEffect(() => {
-        setAperturaStandings(getStanding(aperturaMatches, teamsAC, aperturaId));
+        setStandings([
+            getStanding(aperturaMatches, teamsAC, aperturaId),
+            getStanding(clausuraMatches, teamsAC, clausuraId),
+            getAccumulatedStandings()
+        ])
         setShowStandings(true);
     }, []);
 
@@ -315,7 +356,7 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
     const maxActiveMatchDay = matchDays.length;
 
     const initialMatchDay: ChangeMatchDayState = {
-        activeMatchDay: getCurrentMatchDay(aperturaMatches)
+        activeMatchDay: getCurrentMatchDay(clausuraMatches)
     }
 
     const activeMatchDayReducer = (state: ChangeMatchDayState, action: ChangeMatchDayAction) => {
@@ -328,15 +369,15 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
             case ChangeMatchDayActionType.UPDATE:
                 return { activeMatchDay: action.payload };
             case ChangeMatchDayActionType.RESET:
-                return { activeMatchDay: getCurrentMatchDayFromApi(aperturaMatches) };
+                return { activeMatchDay: getCurrentMatchDayFromApi(clausuraMatches) };
         }
     }
 
     const [state, dispatch] = useReducer(activeMatchDayReducer, initialMatchDay);
 
-    // useEffect(() => {
-    //     setSearchParams({ fecha: state.activeMatchDay.toString() });
-    // }, [state.activeMatchDay]);
+    useEffect(() => {
+        setSearchParams({ fecha: state.activeMatchDay.toString() });
+    }, [state.activeMatchDay]);
 
     const disableButton = (matchDay: number, value: number) => (matchDay === value) ? true : false;
 
@@ -356,7 +397,7 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
         let goalsAway = 0;
         let away = '';
 
-        const matchesNumbers = Object.keys(aperturaMatches);
+        const matchesNumbers = Object.keys(clausuraMatches);
 
         matchesNumbers.map(matchNumber => {
             let matchNum = parseInt(matchNumber);
@@ -369,16 +410,16 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
 
                 matchResults = getMatchResults(home, away, goalsHome, goalsAway, pointsHome, pointsAway, drawnHome, drawnAway, winner, loser);
 
-                aperturaMatches[matchNum].goalsHome = goalsHome;
-                aperturaMatches[matchNum].goalsAway = goalsAway;
-                aperturaMatches[matchNum].finished = true;
-                aperturaMatches[matchNum].pointsHome = matchResults.pointsHome;
-                aperturaMatches[matchNum].pointsAway = matchResults.pointsAway;
-                aperturaMatches[matchNum].winner = matchResults.winner;
-                aperturaMatches[matchNum].loser = matchResults.loser;
-                aperturaMatches[matchNum].drawnHome = matchResults.drawnHome;
-                aperturaMatches[matchNum].drawnAway = matchResults.drawnAway;
-                aperturaMatches[matchNum].fromSessionStorage = true;
+                clausuraMatches[matchNum].goalsHome = goalsHome;
+                clausuraMatches[matchNum].goalsAway = goalsAway;
+                clausuraMatches[matchNum].finished = true;
+                clausuraMatches[matchNum].pointsHome = matchResults.pointsHome;
+                clausuraMatches[matchNum].pointsAway = matchResults.pointsAway;
+                clausuraMatches[matchNum].winner = matchResults.winner;
+                clausuraMatches[matchNum].loser = matchResults.loser;
+                clausuraMatches[matchNum].drawnHome = matchResults.drawnHome;
+                clausuraMatches[matchNum].drawnAway = matchResults.drawnAway;
+                clausuraMatches[matchNum].fromSessionStorage = true;
 
                 winner = '';
                 drawnHome = '';
@@ -388,31 +429,49 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
             }
         });
 
-        setAperturaStandings(getStanding(aperturaMatches, teamsAC, aperturaId));
-        UsePersistForm(aperturaMatches);
+        setStandings(prevStandings => {
+            const newStandings = [
+                prevStandings[aperturaId],
+                getStanding(clausuraMatches, teamsAC, clausuraId),
+                getAccumulatedStandings()
+            ]
+
+            return newStandings;
+        });
+
+        UsePersistForm(clausuraMatches);
     }
 
     const resetMatches = () => {
-        const matchesNumbers = Object.keys(aperturaMatches);
+        const matchesNumbers = Object.keys(clausuraMatches);
 
         matchesNumbers.map(matchNumb => {
             let matchNum = parseInt(matchNumb);
 
-            if (aperturaMatches[matchNum].fromApi === false) {
-                aperturaMatches[matchNum].goalsHome = defaultMatch.goalsHome;
-                aperturaMatches[matchNum].goalsAway = defaultMatch.goalsAway;
-                aperturaMatches[matchNum].finished = defaultMatch.finished;
-                aperturaMatches[matchNum].pointsHome = defaultMatch.pointsHome;
-                aperturaMatches[matchNum].pointsAway = defaultMatch.pointsAway;
-                aperturaMatches[matchNum].winner = defaultMatch.winner;
-                aperturaMatches[matchNum].loser = defaultMatch.loser;
-                aperturaMatches[matchNum].drawnHome = defaultMatch.drawnHome;
-                aperturaMatches[matchNum].drawnAway = defaultMatch.drawnAway;
-                aperturaMatches[matchNum].fromSessionStorage = defaultMatch.fromSessionStorage;
+            if (clausuraMatches[matchNum].fromApi === false) {
+                clausuraMatches[matchNum].goalsHome = defaultMatch.goalsHome;
+                clausuraMatches[matchNum].goalsAway = defaultMatch.goalsAway;
+                clausuraMatches[matchNum].finished = defaultMatch.finished;
+                clausuraMatches[matchNum].pointsHome = defaultMatch.pointsHome;
+                clausuraMatches[matchNum].pointsAway = defaultMatch.pointsAway;
+                clausuraMatches[matchNum].winner = defaultMatch.winner;
+                clausuraMatches[matchNum].loser = defaultMatch.loser;
+                clausuraMatches[matchNum].drawnHome = defaultMatch.drawnHome;
+                clausuraMatches[matchNum].drawnAway = defaultMatch.drawnAway;
+                clausuraMatches[matchNum].fromSessionStorage = defaultMatch.fromSessionStorage;
             }
         });
 
-        setAperturaStandings(getStanding(aperturaMatches, teamsAC, aperturaId));
+        setStandings(prevStandings => {
+            const newStandings = [
+                prevStandings[aperturaId],
+                getStanding(clausuraMatches, teamsAC, clausuraId),
+                getAccumulatedStandings()
+            ]
+
+            return newStandings;
+        });
+
         deleteMatchesFromSessionStorage();
     }
 
@@ -422,6 +481,9 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
     const [activeMatchDaysBlock, setActiveMatchDaysBlock] = useState<number>(defaultActiveMatchDaysBlock);
 
     const handleActiveMatchDaysBlock = (selectedActiveMatchDaysBlock: number) => setActiveMatchDaysBlock(selectedActiveMatchDaysBlock);
+
+    const handleShowAperturaStandings = (value: boolean) => setShowAperturaStandings(value);
+
     return (
         <section className="content-calculator">
             <MatchDays
@@ -449,16 +511,54 @@ const CalculatorA = ({ allScores, defaultMatchDay }: CalculatorAProps) => {
                 <>
                     <Standings
                         headingTable={`Así va el Torneo ${currentSeason}`}
-                        standings={aperturaStandings}
-                        seasonId={aperturaId}
+                        standings={standings[clausuraId]}
+                        seasonId={clausuraId}
                         teams={teamsAC}
                         type={1}
                     />
-                    <Legend isAcumulado={false} isClausura={false} />
+                    <Legend isAcumulado={false} isClausura={true} />
+                    <Standings
+                        headingTable="Así va la tabla acumulada"
+                        standings={standings[accumulatedId]}
+                        seasonId={accumulatedId}
+                        teams={teamsAC}
+                        type={2}
+                    />
+                    <Legend isAcumulado={true} isClausura={false} />
+                    {!showAperturaStandings
+                        ?
+                        <Button
+                            type="button"
+                            bsPrefix={'-'}
+                            className="d-block mx-auto py-2 py-md-3 px-3 px-md-4 shadow btn-show-apertura"
+                            onClick={() => handleShowAperturaStandings(true)}
+                        >
+                            ASÍ QUEDÓ EL APERTURA
+                        </Button>
+                        :
+                        <>
+                            <Standings
+                                headingTable="Torneo Apertura"
+                                standings={standings[aperturaId]}
+                                seasonId={aperturaId}
+                                teams={teamsAC}
+                                type={1}
+                            />
+                            <Legend isAcumulado={false} isClausura={false} />
+                            <Button
+                                type="button"
+                                bsPrefix={'-'}
+                                className="d-block mx-auto my-4 my-md-5 py-2 py-md-3 px-3 px-md-4 shadow btn-show-apertura"
+                                onClick={() => handleShowAperturaStandings(false)}
+                            >
+                                OCULTAR
+                            </Button>
+                        </>
+                    }
                 </>
             }
         </section>
     )
 }
 
-export default CalculatorA;
+export default CalculatorACA;

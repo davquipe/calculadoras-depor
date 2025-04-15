@@ -1,0 +1,19 @@
+.lateral-izq, .lateral-der{
+    overflow: auto;
+    z-index: 1;
+}
+
+.container-zocalo{
+    max-width: 728px;
+    max-height: 90px;
+    z-index: 2147;
+    box-sizing: border-box;
+}
+
+.white-space{
+    height: 102px;
+}
+
+.white-space-2{
+    height: 60px;
+}
