@@ -1,0 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
+@include fontPaths($pathFonts, $preloBold);
+@include fontPaths($pathFonts, $preloMedium);
+@include fontPaths($pathFonts, $preloExtraBold);

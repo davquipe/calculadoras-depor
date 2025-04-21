@@ -1,0 +1,5 @@
+**/.DS_Store
+**/.env
+**/ss.env
+node_modules
+build

@@ -1,0 +1,121 @@
+@import 'variables';
+@import 'mixins';
+
+
+
+@media screen and (max-width: 640px) {
+    .table-sm>:not(caption)>*>* {
+        padding: 0.25rem;
+    }
+
+
+
+    .standing-head {
+        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloExtraBold);
+    }
+
+    .epigraph,
+    .standing-data,
+    .match-form,
+    .input-score {
+        @include fontStyle($matchDayMobileFontSize, $matchDayMobileFontSpacing, $preloMedium);
+    }
+
+    .btn-matchday {
+        width: $matchDayMobileWidth;
+        height: $matchDayMobileHeight;
+    }
+
+    .btn-bet {
+        font: 700 14px/19px $preloMedium;
+    }
+
+    .epigraph-rest {
+        @include fontStyle(14px, 19px, $preloMedium);
+        margin: 15px 0 10px;
+    }
+
+    .btn-matchday,
+    .btn-form,
+    .btn-reset {
+        @include fontStyle(14px, 19px, $preloMedium);
+    }
+
+    .input-score {
+        width: $matchDayMobileWidth;
+        height: $matchDayMobileHeight;
+    }
+
+    .carousel-control-prev {
+        left: $positionLeftMobileButtonControlSlider;
+    }
+
+    .carousel-control-next {
+        right: $positionRightMobileButtonControlSlider;
+    }
+
+    .heading-table {
+        @include fontStyle($headingTableMobileFontSize, $headingTableMobileFontSpacing, $preloMedium);
+    }
+
+    .legend,
+    .error {
+        @include fontStyle($legendMobileFontSize, $legendMobileFontSpacing, $preloMedium);
+    }
+
+    .btn-show-apertura {
+        @include fontStyle($btnAperturaMobileFontSize, $btnAperturaMobileFontSpacing, $preloBold);
+    }
+
+    .bg-footer {
+        height: 120px;
+    }
+
+    .team-row {
+        width: 40px;
+        height: 30.37px;
+
+        &>img {
+            height: 25px;
+        }
+    }
+
+    .table-team {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 539px) {
+    .carousel-container {
+        width: 85%;
+    }
+}
+
+
+
+@media screen and (max-width: 414px) {
+    .standing-head {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloExtraBold);
+    }
+
+    .match-form,
+    .input-score,
+    .standing-data {
+        @include fontStyle($matchDayXsMobileFontSize, $matchDayXsMobileFontSpacing, $preloMedium);
+    }
+}
+
+@media screen and (max-width: 393px) {
+
+    .input-score {
+        width: $matchDayXsMobileWidth;
+        height: $matchDayXsMobileHeight;
+    }
+
+    .legend,
+    .error {
+        @include fontStyle($legendXsMobileFontSize, $legendXsMobileFontSpacing, $preloMedium);
+    }
+}
