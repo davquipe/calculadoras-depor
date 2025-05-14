@@ -1,121 +1,128 @@
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
-.table-sm>:not(caption)>*>* {
-    padding: 0.6rem;
+.table-sm > :not(caption) > * > * {
+  padding: 0.6rem;
 }
 
 .cont-principal {
-    margin-top: 46px;
+  margin-top: 46px;
 }
 
 .cont-layout {
-    max-width: 960px;
+  max-width: 960px;
 }
 
 .epigraph-rest {
-    @include fontStyle(18px, 24px, $preloMedium);
-    text-align: center;
-    margin: 21px 0 14px;
-
+  @include fontStyle(18px, 24px, $preloMedium);
+  text-align: center;
+  margin: 21px 0 14px;
 }
 
 .banner-heading,
 .content-scores,
 .content-standings {
-    contain: content;
-    content-visibility: auto;
+  contain: content;
+  content-visibility: auto;
 }
 
 .banner-heading {
-    contain-intrinsic-size: $layoutMaxWidth $bannerHeadingHeight;
+  contain-intrinsic-size: $layoutMaxWidth $bannerHeadingHeight;
 }
 
 .content-scores {
-    contain-intrinsic-size: $layoutMaxWidth 440px;
+  contain-intrinsic-size: $layoutMaxWidth 440px;
 }
 
 .content-standings {
-    contain-intrinsic-size: $layoutMaxWidth 890px;
+  contain-intrinsic-size: $layoutMaxWidth 890px;
 }
 
 .carousel-container {
-    width: 50%;
+  width: 50%;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: auto;
+  width: auto;
 }
 
 .carousel-control-prev {
-    left: $positionLeftButtonControlSlider;
+  left: $positionLeftButtonControlSlider;
 }
 
 .carousel-control-next {
-    right: $positionRightButtonControlSlider;
+  right: $positionRightButtonControlSlider;
 }
 
 .btn-matchday {
-    width: $matchDayWidth;
-    height: $matchDayHeight;
+  width: $matchDayWidth;
+  height: $matchDayHeight;
 }
 
 .btn-matchday,
 .btn-form,
 .btn-reset {
-    @include fontStyle(18px, 32px, $preloMedium);
+  @include fontStyle(18px, 32px, $preloMedium);
 }
 
 .btn-reset {
-    @include border(1px, $blackColor);
+  @include border(1px, $blackColor);
 }
 
 .btn-bet {
-    font: 700 18px/34px $preloMedium;
+  font: 700 18px/34px $preloMedium;
 }
 
 .btn-form,
 .btn-bet {
-    @include backgroundColor($bgFormButtonColor);
+  @include backgroundColor($bgFormButtonColor);
+}
+
+.btn-form-2 {
+  @include backgroundColor($bgFormButtonColor2);
 }
 
 .match-days {
-    @include backgroundColor($bgMatchDaysColor);
+  @include backgroundColor($bgMatchDaysColor);
+}
+
+.match-days-2 {
+  @include backgroundColor($bgMatchDays2Color);
 }
 
 .btn-matchday {
-    @include border(1px, $blackColor);
-    @include backgroundColor($whiteColor);
+  @include border(1px, $blackColor);
+  @include backgroundColor($whiteColor);
 }
 
 .active-match-day {
-    @include border(1px, $whiteColor);
-    @include backgroundColor($activeBgMatchDaysColor);
-    @include fontColor($whiteColor);
+  @include border(1px, $whiteColor);
+  @include backgroundColor($activeBgMatchDaysColor);
+  @include fontColor($whiteColor);
 }
 
 .standing-head {
-    @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloExtraBold);
+  @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloExtraBold);
 }
 
 .team-row {
-    width: 54px;
-    height: 41px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 54px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &>img {
-        height: 37px;
-    }
+  & > img {
+    height: 37px;
+  }
 }
 
 .epigraph,
 .standing-data,
 .match-form,
 .input-score {
-    @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloMedium);
+  @include fontStyle($matchDayFontSize, $matchDayFontSpacing, $preloMedium);
 }
 
 .standing-head,
@@ -123,66 +130,70 @@
 .standing-data,
 .input-score:disabled,
 .input-score[readonly] {
-    @include fontColor($standingColor);
+  @include fontColor($standingColor);
 }
 
 .bg-odd-match {
-    @include backgroundColor($bgOddMatch);
+  @include backgroundColor($bgOddMatch);
 }
 
 .border-team {
-    border-left: 1px solid $standingColor;
-    border-right: 1px solid $standingColor;
+  border-left: 1px solid $standingColor;
+  border-right: 1px solid $standingColor;
 }
 
 .content-team {
-    width: calc(100% - #{$scoreSeparatorWidth/2});
-    display: flex;
+  width: calc(100% - #{$scoreSeparatorWidth/2});
+  display: flex;
 }
 
 .table-team {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 
-    &>img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .input-score {
-    @include backgroundColor($bgInputScore);
-    @include fontColor($inputScoreColor);
-    width: $matchDayWidth;
-    height: $matchDayHeight;
+  @include backgroundColor($bgInputScore);
+  @include fontColor($inputScoreColor);
+  width: $matchDayWidth;
+  height: $matchDayHeight;
 }
 
 .score-separator {
-    width: $scoreSeparatorWidth;
+  width: $scoreSeparatorWidth;
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .input-score:disabled,
 .input-score[readonly] {
-    @include backgroundColor($bgReadOnlyInputScoreColor);
-    @include fontColor($inputReadOnlyScoreColor);
+  @include backgroundColor($bgReadOnlyInputScoreColor);
+  @include fontColor($inputReadOnlyScoreColor);
 }
 
 .heading-table {
-    @include fontColor($standingColor);
-    @include fontStyle($headingTableFontSize, $headingTableFontSpacing, $preloMedium);
+  @include fontColor($standingColor);
+  @include fontStyle(
+    $headingTableFontSize,
+    $headingTableFontSpacing,
+    $preloMedium
+  );
 }
 
 tbody,
@@ -191,36 +202,44 @@ tfoot,
 th,
 thead,
 tr {
-    border-style: unset !important;
+  border-style: unset !important;
 }
 
-@include backgroundColorPositionClausura(1, $matchDays); //Cambiar Apertura o Claususra
+@include backgroundColorPositionClausura(
+  1,
+  $matchDays
+); //Cambiar Apertura o Claususra
 
 @include backgroundColorPositionApertura(1, $matchDays);
 
 .legend,
 .error {
-    @include fontStyle($legendFontSize, $legendFontSpacing, $preloMedium);
+  @include fontStyle($legendFontSize, $legendFontSpacing, $preloMedium);
 }
 
 .legend {
-    @include fontColor($standingColor);
+  @include fontColor($standingColor);
 }
 
 @include itemLegendColor($amountOfLegends);
 
 .btn-show-apertura {
-    @include fontStyle($btnAperturaFontSize, $btnAperturaFontSpacing, $preloBold);
-    @include backgroundColor($btnBgColor);
-    border: 2px solid $whiteColor;
-    border-radius: 25px;
+  @include fontStyle($btnAperturaFontSize, $btnAperturaFontSpacing, $preloBold);
+  @include backgroundColor($btnBgColor);
+  border: 2px solid $whiteColor;
+  border-radius: 25px;
 }
 
 .logo-brand-footer {
-    margin-top: -70px;
+  margin-top: -70px;
 }
 
 .bg-footer {
-    @include backgroundColor($bgFooter);
-    height: 170px;
+  @include backgroundColor($bgFooter);
+  height: 170px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none;
 }

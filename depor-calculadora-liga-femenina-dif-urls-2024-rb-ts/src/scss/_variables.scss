@@ -1,25 +1,26 @@
-$urlAssets: 'https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_general/depor/prod/';
-$slugCommonAssets: 'elementos-comunes/';
+$urlAssets: "https://d1ts5g4ys243sh.cloudfront.net/proyectos_especiales_general/depor/prod/";
+$slugCommonAssets: "elementos-comunes/";
 $urlCommonAssets: $urlAssets + $slugCommonAssets;
 
 //fonts
-$icomoon: 'icomoon';
-$pathFonts: $urlCommonAssets + 'fonts/';
+$icomoon: "icomoon";
+$pathFonts: $urlCommonAssets + "fonts/";
 
-$preloBold: 'Prelo-Bold';
-$preloMedium: 'Prelo-Medium';
-$preloExtraBold: 'Prelo-ExtraBold';
+$preloBold: "Prelo-Bold";
+$preloMedium: "Prelo-Medium";
+$preloExtraBold: "Prelo-ExtraBold";
 
 //body
-$whiteColor: #FFF;
+$whiteColor: #fff;
 $blackColor: #000;
-$lightGreen: #EF000D; //#f8670b betsson;
+$lightGreen: #ef000d; //#f8670b betsson;
 $backgroundColorBody: $whiteColor;
-$yellow2025: #CFD607;
+$yellow2025: #cfd607;
+$femenino: #812177;
 
 //header Depor
 $backgroundColorHeader: $blackColor;
-$colorCruz: #FFF;
+$colorCruz: #fff;
 $widthLogo: 70px;
 $heightLogo: 26px;
 $backgroundSize: 80%;
@@ -27,29 +28,30 @@ $headerHeight: 46px;
 
 //especial
 $layoutMaxWidth: 960px;
-$bgMatchDaysColor: $yellow2025;
+$bgMatchDaysColor: $femenino;
+$bgMatchDays2Color: #919191;
 $activeBgMatchDaysColor: $blackColor;
 $standingColor: $blackColor;
-$bgFirstPosition: #CFD607; //#fcc772;betsson
-$bgSecondPosition: #E4E68E;
-$bgThirdPosition: #D7D8A9;
-$bgFourthPosition: #F0F0CE;
-$bgMiddlePosition: #F5F5F5;
-$bgBeforeLastPosition: #DBDBDB;
-$bgLastPosition: #ACACAC;
+$bgFirstPosition: #812177; //#fcc772;betsson
+$bgSecondPosition: #812177;
+$bgThirdPosition: #ffecb7;
+$bgFourthPosition: #f0f0ce;
+$bgMiddlePosition: #f5f5f5;
+$bgBeforeLastPosition: #dbdbdb;
+$bgLastPosition: #acacac;
 $bannerHeadingHeight: 234px;
 $bgLegends: (
-    1: $bgFirstPosition,
-    2: $bgSecondPosition,
-    3: $bgThirdPosition,
-    4: $bgFourthPosition,
-    5: $bgLastPosition
+  1: $bgFirstPosition,
+  2: #ffecb7,
+  3: $bgThirdPosition,
+  4: $bgFourthPosition,
+  5: $bgLastPosition,
 );
 $matchDays: 19; //cambiar por nro de fechas
-$amountOfLegends: 5; //1 para Apertura, 5 para el Clausura. Ver src/Constants.ts
+$amountOfLegends: 1; //1 para Apertura, 5 para el Clausura. Ver src/Constants.ts
 $positionLeftButtonControlSlider: -35px;
 $positionRightButtonControlSlider: -30px;
-$bgOddMatch: #E0E0E0;
+$bgOddMatch: #e0e0e0;
 $scoreSeparatorWidth: 4px;
 $matchDayWidth: 45px;
 $matchDayHeight: 33px;
@@ -57,9 +59,10 @@ $matchDayFontSize: 18px;
 $matchDayFontSpacing: 24px;
 $bgInputScore: $blackColor;
 $inputScoreColor: $whiteColor;
-$inputReadOnlyScoreColor: #807D7D;
+$inputReadOnlyScoreColor: #807d7d;
 $bgReadOnlyInputScoreColor: #e9ecef;
 $bgFormButtonColor: $activeBgMatchDaysColor;
+$bgFormButtonColor2: #812177;
 $headingTableFontSize: 40px;
 $headingTableFontSpacing: 88px;
 $btnAperturaFontSize: 17px;
@@ -67,7 +70,7 @@ $btnAperturaFontSpacing: 17px;
 $legendFontSize: 14px;
 $legendFontSpacing: 24px;
 $btnBgColor: #fcc772;
-$bgFooter: #D8EDFB;
+$bgFooter: #d8edfb;
 
 //tablet
 $bannerHeadingTabletHeight: 300px;
