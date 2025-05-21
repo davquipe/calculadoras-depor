@@ -39,7 +39,7 @@ const MatchDays = ({
       <section className="carousel-container mx-auto">
         <Carousel
           as="section"
-          activeIndex={activeMatchDaysBlock}
+          activeIndex={0}
           indicators={false}
           interval={null}
           nextLabel={null}
